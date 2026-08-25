@@ -27,7 +27,7 @@ export default function VideoShowcase() {
             AI boating coach helps you learn, ask questions, and build
             confidence on the water.
           </p>
-          <button className="mt-8 rounded-lg bg-[#0c2e4e] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]">
+          <button className="mt-8 rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]">
             Try First Mate
           </button>
         </div>

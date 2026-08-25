@@ -58,7 +58,7 @@ export default function HeroSection() {
           Norman and beyond.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
-          <button className="w-full rounded-lg bg-[#0c2e4e] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a] sm:w-auto">
+          <button className="w-full rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a] sm:w-auto">
             Start Learning
           </button>
           <button className="w-full rounded-lg border border-slate-300/90 bg-white/90 px-7 py-3 text-sm font-semibold text-[#0f172a] shadow-sm transition-all duration-200 hover:bg-slate-50 sm:w-auto">

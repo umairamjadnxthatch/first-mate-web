@@ -47,7 +47,7 @@ function TestimonialCard({
         &ldquo;{quote}&rdquo;
       </p>
       <div className="mt-6 flex items-center gap-3">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-sm font-bold text-[#0c2e4e] shadow-sm">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-sm font-bold text-[#07557c] shadow-sm">
           {name.charAt(0)}
         </div>
         <div>
