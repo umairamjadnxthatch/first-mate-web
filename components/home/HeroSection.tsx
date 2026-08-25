@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { GraduationCap, ShieldCheck, FileText, Anchor } from "lucide-react";
 
 const floatingCards = [
@@ -29,9 +30,18 @@ const floatingCards = [
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#eaf6fc] via-[#f3f9fd] to-[#ffffff] py-20 sm:py-28">
-      {/* Subtle decorative background glow */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-200/30 via-transparent to-transparent" />
+    <section className="relative overflow-hidden py-20 sm:py-28">
+      {/* Full-bleed hero background image */}
+      <Image
+        src="/home/herobgimage.png"
+        alt=""
+        fill
+        priority
+        className="object-cover object-center"
+        sizes="100vw"
+      />
+      {/* Soft light overlay to keep text legible */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/60 via-white/40 to-white/70" />
 
       <div className="relative mx-auto max-w-4xl px-6 text-center">
         <span className="mb-6 inline-flex items-center justify-center rounded-full border border-[#38bdf8]/60 bg-[#e0f2fe]/80 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-[#0284c7] shadow-sm sm:text-xs">
