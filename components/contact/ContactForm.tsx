@@ -25,10 +25,10 @@ export default function ContactForm() {
 
                     {/* ── Left Column: Contact Info ── */}
                     <div className="lg:col-span-5 flex flex-col justify-start">
-                        <h1 className="text-[2.6rem] font-extrabold leading-tight tracking-tight text-[#0f172a] sm:text-5xl">
+                        <h1 className="text-[2.75rem] font-extrabold leading-[1.15] tracking-tight text-[#0f172a] sm:text-5xl">
                             We&apos;re Here to Help
                         </h1>
-                        <p className="mt-2 text-sm text-[#64748b]">
+                        <p className="mt-3 text-sm text-[#64748b]">
                             We&apos;re Here to Help
                         </p>
 
@@ -39,10 +39,10 @@ export default function ContactForm() {
                                     <Mail className="h-4.5 w-4.5" />
                                 </span>
                                 <div>
-                                    <p className="text-sm font-bold text-[#0f172a]">Email</p>
+                                    <p className="text-sm font-semibold text-[#0f172a]">Email</p>
                                     <a
                                         href="mailto:support@firstmate.ai"
-                                        className="mt-0.5 block text-xs text-[#64748b] transition hover:text-[#00a896]"
+                                        className="mt-0.5 block text-sm text-[#64748b] transition hover:text-[#00a896]"
                                     >
                                         support@firstmate.ai
                                     </a>
@@ -55,10 +55,10 @@ export default function ContactForm() {
                                     <Phone className="h-4.5 w-4.5" />
                                 </span>
                                 <div>
-                                    <p className="text-sm font-bold text-[#0f172a]">Phone</p>
+                                    <p className="text-sm font-semibold text-[#0f172a]">Phone</p>
                                     <a
                                         href="tel:+17041234567"
-                                        className="mt-0.5 block text-xs text-[#64748b] transition hover:text-[#00a896]"
+                                        className="mt-0.5 block text-sm text-[#64748b] transition hover:text-[#00a896]"
                                     >
                                         (704) 123-4567
                                     </a>
@@ -71,8 +71,8 @@ export default function ContactForm() {
                                     <MapPin className="h-4.5 w-4.5" />
                                 </span>
                                 <div>
-                                    <p className="text-sm font-bold text-[#0f172a]">Location</p>
-                                    <p className="mt-0.5 text-xs text-[#64748b]">
+                                    <p className="text-sm font-semibold text-[#0f172a]">Location</p>
+                                    <p className="mt-0.5 text-sm text-[#64748b]">
                                         Lake Norman, North Carolina, United States
                                     </p>
                                 </div>
