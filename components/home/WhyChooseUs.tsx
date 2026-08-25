@@ -32,23 +32,23 @@ const items = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-slate-50 py-20 sm:py-24">
+    <section className="bg-[#f0f4f9] py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col items-center text-center">
-          <span className="mb-6 inline-block rounded-full border border-sky-200 bg-sky-50 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-sky-700">
+          <span className="mb-6 inline-flex items-center justify-center rounded-full border border-[#38bdf8]/60 bg-[#e0f2fe]/80 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-[#0284c7] shadow-sm sm:text-xs">
             Why Choose First Mate
           </span>
-          <h2 className="text-4xl font-extrabold text-slate-900 sm:text-5xl">
+          <h2 className="text-4xl font-extrabold leading-tight tracking-tight text-[#0f172a] sm:text-5xl">
             More Than Answers. A Better
             <br />
-            <span className="text-teal">Way to Learn Boating.</span>
+            <span className="text-[#00a896]">Way to Learn Boating.</span>
           </h2>
-          <p className="mt-5 max-w-2xl text-sm text-slate-600 sm:text-base">
+          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-[#475569] sm:text-base">
             First Mate combines trusted boating studies, personalized
             guidance, and knowledge checks to help you build practical
             knowledge and confidence—one question at a time.
           </p>
-          <button className="mt-8 rounded-lg bg-navy px-7 py-3 text-sm font-semibold text-white transition hover:bg-navy-dark">
+          <button className="mt-8 rounded-lg bg-[#0c2e4e] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]">
             Get Started
           </button>
         </div>
@@ -57,27 +57,25 @@ export default function WhyChooseUs() {
           {items.map(({ icon: Icon, title, description, highlight }) => (
             <div
               key={title}
-              className={`rounded-2xl p-6 shadow-sm transition hover:-translate-y-1 ${
+              className={`flex flex-col justify-start rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1 ${
                 highlight
-                  ? "bg-gradient-to-br from-teal to-teal-light text-white"
-                  : "border border-slate-200 bg-white text-slate-900"
+                  ? "bg-gradient-to-b from-[#00a896] to-[#00bfa5] text-white shadow-lg shadow-[#00a896]/20"
+                  : "border border-slate-200/90 bg-white text-[#0f172a] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-md"
               }`}
             >
               <div
-                className={`flex h-11 w-11 items-center justify-center rounded-xl ${
-                  highlight ? "bg-white/20" : "bg-teal/10"
+                className={`mb-6 flex h-12 w-12 items-center justify-center rounded-2xl shadow-sm ${
+                  highlight
+                    ? "bg-white text-[#00a896]"
+                    : "border border-[#38bdf8]/30 bg-[#e0f2fe]/60 text-[#00a896]"
                 }`}
               >
-                <Icon
-                  className={`h-5 w-5 ${
-                    highlight ? "text-white" : "text-teal"
-                  }`}
-                />
+                <Icon className="h-6 w-6" strokeWidth={1.75} />
               </div>
-              <h3 className="mt-4 text-base font-semibold">{title}</h3>
+              <h3 className="text-lg font-bold tracking-tight">{title}</h3>
               <p
-                className={`mt-2 text-sm ${
-                  highlight ? "text-white/90" : "text-slate-600"
+                className={`mt-2 text-sm leading-relaxed ${
+                  highlight ? "text-white/90" : "text-[#64748b]"
                 }`}
               >
                 {description}
@@ -89,3 +87,4 @@ export default function WhyChooseUs() {
     </section>
   );
 }
+
