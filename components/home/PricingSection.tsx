@@ -9,10 +9,10 @@ const features = [
 ];
 
 const plans = [
-  { name: "Starter", price: "19.99", highlight: false },
-  { name: "Growth", price: "19.99", highlight: false },
-  { name: "Pro", price: "19.99", highlight: true },
-  { name: "Captain", price: "19.99", highlight: false },
+  { name: "Starter", price: "19.99" },
+  { name: "Growth", price: "19.99" },
+  { name: "Pro", price: "19.99" },
+  { name: "Captain", price: "19.99" },
 ];
 
 export default function PricingSection() {
@@ -53,11 +53,7 @@ export default function PricingSection() {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`flex flex-col justify-between rounded-3xl p-6 shadow-lg backdrop-blur-md transition-all duration-300 hover:-translate-y-1 sm:p-7 ${
-                plan.highlight
-                  ? "border-2 border-[#00a896] bg-[#063b5e]/75 shadow-[0_0_30px_rgba(0,168,150,0.2)] hover:border-[#38bdf8]"
-                  : "border border-[#0284c7]/30 bg-[#06334f]/50 hover:border-[#38bdf8]/60 hover:bg-[#073b5c]/60"
-              }`}
+              className="group flex flex-col justify-between rounded-3xl border border-[#0284c7]/30 bg-[#06334f]/50 p-6 text-white shadow-lg backdrop-blur-md transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-[#38bdf8]/60 hover:bg-[#073b5c]/70 hover:shadow-2xl hover:shadow-[#00a896]/25 sm:p-7"
             >
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wider text-slate-300">
@@ -86,13 +82,7 @@ export default function PricingSection() {
                 </ul>
               </div>
 
-              <button
-                className={`mt-8 w-full rounded-xl py-3 text-sm font-semibold shadow-sm transition-all duration-200 ${
-                  plan.highlight
-                    ? "bg-gradient-to-r from-[#00a896] to-[#02b8a2] font-bold text-white shadow-md shadow-[#00a896]/30 hover:brightness-110"
-                    : "border border-[#00a896] bg-[#00a896]/15 text-white hover:bg-[#00a896]"
-                }`}
-              >
+              <button className="mt-8 w-full rounded-xl border border-[#00a896] bg-[#00a896]/15 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#00a896] hover:shadow-md hover:shadow-[#00a896]/30">
                 Get Started
               </button>
             </div>
