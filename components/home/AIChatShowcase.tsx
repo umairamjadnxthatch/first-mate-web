@@ -1,4 +1,5 @@
-import { Check, Send, Anchor } from "lucide-react";
+import Image from "next/image";
+import { Check } from "lucide-react";
 
 const leftChecks = [
   "Based on approved boating studies",
@@ -50,73 +51,17 @@ export default function AIChatShowcase() {
             ))}
           </ul>
 
-          {/* Chat mockup */}
-          <div className="order-1 mx-auto w-full max-w-md overflow-hidden rounded-2xl border-[6px] border-[#0c1f33] bg-[#0c1f33] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] sm:rounded-3xl sm:border-[8px] lg:order-2">
-            {/* Header */}
-            <div className="flex items-center justify-between border-b border-slate-200 bg-[#f8fafc] px-4 py-3">
-              <div className="flex items-center gap-2.5">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#0c2e4e] text-white shadow-sm">
-                  <Anchor className="h-4 w-4" />
-                </span>
-                <div className="text-left">
-                  <p className="text-xs font-bold text-slate-900">
-                    Your First Mate coach
-                  </p>
-                  <p className="text-[10px] font-medium text-[#00a896]">Lake Norman, NC</p>
-                </div>
-              </div>
-              <span className="cursor-pointer rounded-md bg-[#00a896] px-3 py-1 text-[10px] font-bold text-white shadow-sm transition hover:bg-[#009686]">
-                Change boat
-              </span>
-            </div>
-
-            {/* Messages */}
-            <div className="space-y-3 bg-white px-4 py-4 text-left">
-              <div className="rounded-2xl rounded-tl-sm border border-slate-100 bg-[#f1f5f9] p-3 text-xs leading-relaxed text-slate-700">
-                Welcome aboard! I&apos;m your First Mate coach for Lake
-                Norman, NC. Pick your boat and I&apos;ll tailor every answer
-                to it — or ask me anything to get started.
-              </div>
-
-              <div className="ml-auto w-fit max-w-[85%] rounded-2xl rounded-tr-sm bg-[#0c2e4e] p-3 text-xs font-medium text-white shadow-sm">
-                How do I dock in a crosswind?
-              </div>
-
-              <div className="space-y-1.5 rounded-2xl rounded-tl-sm border border-slate-100 bg-[#f1f5f9] p-3 text-xs leading-relaxed text-slate-700">
-                <p>
-                  Good question — this is one of those &quot;boat matters&quot; situations. Which one do you run: pontoon, bowrider/sterndrive, center console, or a surf/inboard boat? Wind and pivot point behave differently depending on hull and how much windage you&apos;ve got up top.
-                </p>
-                <p>
-                  Tell me your boat and I&apos;ll get specific on angle of approach and which side to favor.
-                </p>
-              </div>
-
-              <div className="ml-auto w-fit cursor-pointer rounded-lg bg-[#0c2e4e] px-3.5 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-[#08223a]">
-                Got it
-              </div>
-
-              <div className="rounded-2xl rounded-tl-sm border border-slate-100 bg-[#f1f5f9] p-3 text-xs leading-relaxed text-slate-700">
-                Sounds good — but I still don&apos;t know what you&apos;re driving. Pontoon, bowrider/sterndrive, center console, or surf/inboard? Windage and pivot behavior are different enough on each that &quot;docking in a crosswind&quot; looks pretty different depending on the answer.
-              </div>
-            </div>
-
-            {/* Input */}
-            <div className="flex items-center gap-2 border-t border-slate-100 bg-white px-4 py-2.5">
-              <input
-                type="text"
-                placeholder="Ask your coach..."
-                disabled
-                className="flex-1 rounded-full border border-slate-200/80 bg-[#f1f5f9] px-4 py-2 text-xs text-slate-500 outline-none"
-              />
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#00a896] text-white shadow-sm">
-                <Send className="h-4 w-4" />
-              </span>
-            </div>
-            <div className="bg-white pb-3 px-4">
-              <p className="text-center text-[9px] font-medium text-[#00a896]">
-                Educational purposes only · Not a navigation device · Emergency: 911 or VHF 16
-              </p>
-            </div>
+          {/* Chat screenshot image */}
+          <div className="order-1 mx-auto w-full max-w-lg overflow-hidden rounded-2xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] sm:rounded-3xl lg:order-2">
+            <Image
+              src="/home/AIChatShowcase.png"
+              alt="First Mate AI chat interface"
+              width={900}
+              height={620}
+              priority
+              className="h-auto w-full object-cover"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 40vw"
+            />
           </div>
 
           {/* Right checklist */}
@@ -138,4 +83,3 @@ export default function AIChatShowcase() {
     </section>
   );
 }
-
