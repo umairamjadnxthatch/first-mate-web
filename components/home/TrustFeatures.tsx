@@ -7,7 +7,6 @@ const items = [
     title: "Study-Based Coaching",
     description:
       "Built on trusted boating studies. Get clear, reliable answers grounded in the approved First Mate curriculum.",
-    highlight: true,
   },
   {
     number: "02",
@@ -15,7 +14,6 @@ const items = [
     title: "Personalized Guidance",
     description:
       "Advice that fits your boat. Your selected boat helps tailor coaching to the guidance that matters most to you.",
-    highlight: false,
   },
   {
     number: "03",
@@ -23,7 +21,6 @@ const items = [
     title: "Learn & Reinforce",
     description:
       "Turn answers into real knowledge. Follow-up questions and quick quizzes help you understand, practice, and remember.",
-    highlight: false,
   },
   {
     number: "04",
@@ -31,7 +28,6 @@ const items = [
     title: "Safety at the Core",
     description:
       "Designed with safety in mind. Clear boundaries keep your coaching educational, responsible, and focused on safer boating.",
-    highlight: false,
   },
 ];
 
@@ -57,29 +53,19 @@ export default function TrustFeatures() {
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map(({ number, icon: Icon, title, description, highlight }) => (
+          {items.map(({ number, icon: Icon, title, description }) => (
             <div
               key={number}
-              className={`flex flex-col justify-start rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1 ${
-                highlight
-                  ? "bg-gradient-to-b from-[#00a896] to-[#00bfa5] text-white shadow-lg shadow-[#00a896]/20"
-                  : "border border-slate-200/90 bg-white text-[#0f172a] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-md"
-              }`}
+              className="group flex flex-col justify-start rounded-3xl border border-slate-200/90 bg-white p-7 text-[#0f172a] shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-transparent hover:bg-gradient-to-b hover:from-[#00a896] hover:to-[#00bfa5] hover:text-white hover:shadow-xl hover:shadow-[#00a896]/20"
             >
               <Icon
-                className={`h-8 w-8 shrink-0 ${
-                  highlight ? "text-white" : "text-[#0f172a]"
-                }`}
+                className="h-8 w-8 shrink-0 text-[#0f172a] transition-colors duration-300 ease-out group-hover:text-white"
                 strokeWidth={1.75}
               />
-              <h3 className="mt-6 text-lg font-bold tracking-tight">
+              <h3 className="mt-6 text-lg font-bold tracking-tight text-[#0f172a] transition-colors duration-300 ease-out group-hover:text-white">
                 {number} — {title}
               </h3>
-              <p
-                className={`mt-3 text-sm leading-relaxed ${
-                  highlight ? "text-white/90" : "text-[#64748b]"
-                }`}
-              >
+              <p className="mt-3 text-sm leading-relaxed text-[#64748b] transition-colors duration-300 ease-out group-hover:text-white/90">
                 {description}
               </p>
             </div>

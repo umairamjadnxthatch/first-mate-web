@@ -6,27 +6,23 @@ const items = [
     title: "Trusted Knowledge",
     description:
       "Answers come only from owner-approved studies and instructions.",
-    highlight: true,
   },
   {
     icon: MessagesSquare,
     title: "Your Conversations",
     description:
       "Your chat history is saved and available across your devices.",
-    highlight: false,
   },
   {
     icon: Sparkles,
     title: "Learn as You Go",
     description:
       "Follow-up quizzes help reinforce and strengthen your learning.",
-    highlight: false,
   },
   {
     icon: Compass,
     title: "Always with You",
     description: "Coaching available anytime you need it, anywhere.",
-    highlight: false,
   },
 ];
 
@@ -54,30 +50,18 @@ export default function WhyChooseUs() {
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map(({ icon: Icon, title, description, highlight }) => (
+          {items.map(({ icon: Icon, title, description }) => (
             <div
               key={title}
-              className={`flex flex-col justify-start rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1 ${
-                highlight
-                  ? "bg-gradient-to-b from-[#00a896] to-[#00bfa5] text-white shadow-lg shadow-[#00a896]/20"
-                  : "border border-slate-200/90 bg-white text-[#0f172a] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-md"
-              }`}
+              className="group flex flex-col justify-start rounded-3xl border border-slate-200/90 bg-white p-7 text-[#0f172a] shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-transparent hover:bg-gradient-to-b hover:from-[#00a896] hover:to-[#00bfa5] hover:text-white hover:shadow-xl hover:shadow-[#00a896]/20"
             >
-              <div
-                className={`mb-6 flex h-12 w-12 items-center justify-center rounded-2xl shadow-sm ${
-                  highlight
-                    ? "bg-white text-[#00a896]"
-                    : "border border-[#38bdf8]/30 bg-[#e0f2fe]/60 text-[#00a896]"
-                }`}
-              >
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl border border-[#38bdf8]/30 bg-[#e0f2fe]/60 text-[#00a896] shadow-sm transition-all duration-300 ease-out group-hover:border-transparent group-hover:bg-white group-hover:text-[#00a896]">
                 <Icon className="h-6 w-6" strokeWidth={1.75} />
               </div>
-              <h3 className="text-lg font-bold tracking-tight">{title}</h3>
-              <p
-                className={`mt-2 text-sm leading-relaxed ${
-                  highlight ? "text-white/90" : "text-[#64748b]"
-                }`}
-              >
+              <h3 className="text-lg font-bold tracking-tight text-[#0f172a] transition-colors duration-300 ease-out group-hover:text-white">
+                {title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-[#64748b] transition-colors duration-300 ease-out group-hover:text-white/90">
                 {description}
               </p>
             </div>
