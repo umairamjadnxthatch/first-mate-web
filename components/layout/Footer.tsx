@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Anchor, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import logoIcon from "@/app/logo-icon.png";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -145,21 +147,16 @@ export default function Footer() {
             {/* Logo */}
             <Link
               href="/"
-              className="inline-flex items-center gap-3"
+              className="inline-flex items-center gap-3 group"
               aria-label="First Mate home"
             >
-              <span
-                className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(56,189,248,0.25) 0%, rgba(14,165,233,0.15) 100%)",
-                  boxShadow: "0 0 0 1px rgba(56,189,248,0.2)",
-                }}
-              >
-                <Anchor
-                  className="h-5 w-5"
-                  style={{ color: "#38bdf8" }}
-                  aria-hidden="true"
+              <span className="flex h-10 w-10 sm:h-11 sm:w-11 flex-shrink-0 items-center justify-center rounded-xl bg-white p-1 sm:p-1.5 shadow-sm transition-transform duration-200 group-hover:scale-105 overflow-hidden">
+                <Image
+                  src={logoIcon}
+                  alt="First Mate"
+                  width={44}
+                  height={44}
+                  className="h-full w-full object-cover object-center scale-110"
                 />
               </span>
               <span

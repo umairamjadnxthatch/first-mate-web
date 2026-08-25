@@ -1,9 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Anchor, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logoIcon from "@/app/logo-icon.png";
 
 // ─── Nav link data ────────────────────────────────────────────────────────────
 
@@ -32,25 +34,13 @@ function NavLink({
     <Link
       href={href}
       onClick={onClick}
-      className="relative text-sm font-medium tracking-wide transition-colors duration-200 group"
-      style={{ color: active ? "#2dd4bf" : "#c8dde9" }}
+      className={`text-sm font-medium tracking-normal transition-colors duration-200 ${active
+          ? "text-[#00c9a7] font-semibold"
+          : "text-white/90 hover:text-white"
+        }`}
       aria-current={active ? "page" : undefined}
     >
       {label}
-      {/* Active underline dot */}
-      {active && (
-        <span
-          className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-0.5 w-4 rounded-full"
-          style={{ background: "#2dd4bf" }}
-        />
-      )}
-      {/* Hover underline (hidden when active) */}
-      {!active && (
-        <span
-          className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-0.5 w-0 rounded-full transition-all duration-200 group-hover:w-4"
-          style={{ background: "rgba(45,212,191,0.6)" }}
-        />
-      )}
     </Link>
   );
 }
@@ -62,9 +52,9 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  /** Detect scroll so we can deepen the backdrop blur on scroll */
+  /** Detect scroll */
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 8);
+    const handler = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
@@ -75,202 +65,142 @@ export default function Navbar() {
   }, [pathname]);
 
   return (
-    <header
-      className="sticky top-0 z-50 w-full"
-      style={{
-        background: scrolled
-          ? "rgba(10,22,40,0.92)"
-          : "linear-gradient(180deg, rgba(8,20,38,0.95) 0%, rgba(10,26,46,0.92) 100%)",
-        backdropFilter: "blur(16px)",
-        WebkitBackdropFilter: "blur(16px)",
-        borderBottom: "1px solid rgba(255,255,255,0.06)",
-        transition: "background 0.3s ease",
-      }}
-    >
-      {/* ── Inner container ── */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between gap-8">
-
-          {/* ── Logo ── */}
-          <Link
-            href="/"
-            className="flex flex-shrink-0 items-center gap-2.5 group"
-            aria-label="First Mate – go to homepage"
-          >
-            {/* Icon box */}
-            <span
-              className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl transition-all duration-200 group-hover:scale-105"
-              style={{
-                background: "rgba(255,255,255,0.92)",
-                boxShadow:
-                  "0 1px 3px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.12)",
-              }}
-            >
-              <Anchor
-                className="h-4.5 w-4.5"
-                style={{ color: "#0d7ea0" }}
-                strokeWidth={2.25}
-                aria-hidden="true"
-              />
-            </span>
-
-            {/* Brand name */}
-            <span
-              className="text-[15px] font-semibold tracking-tight"
-              style={{ color: "#f0f6fc" }}
-            >
-              First Mate
-            </span>
-          </Link>
-
-          {/* ── Desktop nav links (centered) ── */}
-          <nav
-            className="hidden md:flex items-center gap-7"
-            aria-label="Primary navigation"
-          >
-            {NAV_LINKS.map(({ label, href }) => (
-              <NavLink
-                key={href}
-                href={href}
-                label={label}
-                active={
-                  href === "/"
-                    ? pathname === "/"
-                    : pathname.startsWith(href)
-                }
-              />
-            ))}
-          </nav>
-
-          {/* ── Desktop CTA buttons ── */}
-          <div className="hidden md:flex items-center gap-3">
-            {/* Log In */}
-            <Link
-              href="/login"
-              className="text-sm font-medium transition-colors duration-200 px-3 py-1.5 rounded-lg"
-              style={{ color: "#c8dde9" }}
-              onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.color = "#f0f6fc")
-              }
-              onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.color = "#c8dde9")
-              }
-            >
-              Log In
-            </Link>
-
-            {/* Get Started */}
-            <Link
-              href="/get-started"
-              className="flex items-center justify-center px-5 py-2 rounded-full text-sm font-semibold tracking-wide transition-all duration-200 hover:brightness-110 hover:scale-[1.02] active:scale-[0.98]"
-              style={{
-                background:
-                  "linear-gradient(135deg, #0fb8a0 0%, #0d9e8a 50%, #0a8875 100%)",
-                color: "#ffffff",
-                boxShadow:
-                  "0 2px 12px rgba(15,184,160,0.35), inset 0 1px 0 rgba(255,255,255,0.15)",
-              }}
-            >
-              Get Started
-            </Link>
-          </div>
-
-          {/* ── Mobile hamburger ── */}
-          <button
-            type="button"
-            className="md:hidden flex h-9 w-9 items-center justify-center rounded-lg transition-colors duration-150"
-            style={{
-              background: "rgba(255,255,255,0.06)",
-              border: "1px solid rgba(255,255,255,0.08)",
-              color: "#c8dde9",
-            }}
-            onClick={() => setMobileOpen((o) => !o)}
-            aria-expanded={mobileOpen}
-            aria-controls="mobile-menu"
-            aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
-          >
-            {mobileOpen ? (
-              <X className="h-4.5 w-4.5" aria-hidden="true" />
-            ) : (
-              <Menu className="h-4.5 w-4.5" aria-hidden="true" />
-            )}
-          </button>
-        </div>
-      </div>
-
-      {/* ── Mobile menu drawer ── */}
-      <div
-        id="mobile-menu"
-        role="region"
-        aria-label="Mobile navigation"
-        className="md:hidden overflow-hidden transition-all duration-300 ease-in-out"
-        style={{
-          maxHeight: mobileOpen ? "420px" : "0px",
-          opacity: mobileOpen ? 1 : 0,
-          borderTop: mobileOpen
-            ? "1px solid rgba(255,255,255,0.06)"
-            : "1px solid transparent",
-        }}
-      >
+    <header className="relative z-50 w-full px-4 pt-3.5 pb-2 sm:px-6 sm:pt-5 lg:px-8">
+      {/* ── Floating capsule pill container ── */}
+      <div className="mx-auto max-w-6xl">
         <div
-          className="mx-auto max-w-7xl px-4 sm:px-6 pb-6 pt-4 flex flex-col gap-1"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(10,22,40,0.98) 0%, rgba(8,18,34,0.99) 100%)",
-          }}
+          className={`relative rounded-2xl sm:rounded-2xl border border-white/10 bg-gradient-to-r from-[#06273e] via-[#093954] to-[#041c2c] px-4 py-2.5 sm:px-6 sm:py-3 shadow-[0_12px_40px_rgba(0,0,0,0.38)] backdrop-blur-md transition-all duration-300 ${scrolled ? "shadow-[0_16px_50px_rgba(0,0,0,0.48)] border-sky-500/20" : ""
+            }`}
         >
-          {/* Mobile nav links */}
-          <nav className="flex flex-col gap-1" aria-label="Mobile primary navigation">
-            {NAV_LINKS.map(({ label, href }) => {
-              const active =
-                href === "/" ? pathname === "/" : pathname.startsWith(href);
-              return (
-                <Link
+          <div className="flex items-center justify-between gap-4">
+            {/* ── Logo ── */}
+            <Link
+              href="/"
+              className="flex flex-shrink-0 items-center gap-3 group"
+              aria-label="First Mate – go to homepage"
+            >
+              {/* White rounded icon box */}
+              <span className="flex h-9 w-9 sm:h-10 sm:w-10 flex-shrink-0 items-center justify-center rounded-xl bg-white p-1 sm:p-1.5 shadow-sm transition-transform duration-200 group-hover:scale-105 overflow-hidden">
+                <Image
+                  src={logoIcon}
+                  alt="First Mate"
+                  width={40}
+                  height={40}
+                  className="h-full w-full object-cover object-center scale-110"
+                  priority
+                />
+              </span>
+
+              {/* Brand name */}
+              <span className="text-base sm:text-lg font-bold tracking-tight text-white">
+                First Mate
+              </span>
+            </Link>
+
+            {/* ── Desktop nav links (centered) ── */}
+            <nav
+              className="hidden md:flex items-center gap-8 lg:gap-10"
+              aria-label="Primary navigation"
+            >
+              {NAV_LINKS.map(({ label, href }) => (
+                <NavLink
                   key={href}
                   href={href}
-                  onClick={() => setMobileOpen(false)}
-                  className="flex items-center px-3 py-2.5 rounded-xl text-sm font-medium transition-colors duration-150"
-                  style={{
-                    color: active ? "#2dd4bf" : "#c8dde9",
-                    background: active
-                      ? "rgba(45,212,191,0.08)"
-                      : "transparent",
-                  }}
-                  aria-current={active ? "page" : undefined}
-                >
-                  {label}
-                </Link>
-              );
-            })}
-          </nav>
+                  label={label}
+                  active={
+                    href === "/"
+                      ? pathname === "/"
+                      : pathname.startsWith(href)
+                  }
+                />
+              ))}
+            </nav>
 
-          {/* Mobile CTA buttons */}
-          <div className="mt-4 flex flex-col gap-3 border-t pt-4" style={{ borderColor: "rgba(255,255,255,0.07)" }}>
-            <Link
-              href="/login"
-              onClick={() => setMobileOpen(false)}
-              className="flex items-center justify-center h-10 rounded-xl text-sm font-medium transition-colors duration-150"
-              style={{
-                border: "1px solid rgba(255,255,255,0.12)",
-                color: "#c8dde9",
-                background: "rgba(255,255,255,0.04)",
-              }}
+            {/* ── Desktop CTA buttons ── */}
+            <div className="hidden md:flex items-center gap-5">
+              {/* Log In */}
+              <Link
+                href="/login"
+                className="text-sm font-medium text-white/90 transition-colors duration-200 hover:text-white"
+              >
+                Log In
+              </Link>
+
+              {/* Get Started Button */}
+              <Link
+                href="/get-started"
+                className="inline-flex items-center justify-center rounded-xl bg-[#00c9a7] px-5 sm:px-6 py-2.5 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(0,201,167,0.4)] transition-all duration-200 hover:bg-[#00b497] hover:shadow-[0_6px_24px_rgba(0,201,167,0.55)] hover:scale-[1.02] active:scale-[0.98]"
+              >
+                Get Started
+              </Link>
+            </div>
+
+            {/* ── Mobile hamburger ── */}
+            <button
+              type="button"
+              className="md:hidden flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 text-white transition-colors duration-150 hover:bg-white/15"
+              onClick={() => setMobileOpen((o) => !o)}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
+              aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
             >
-              Log In
-            </Link>
-            <Link
-              href="/get-started"
-              onClick={() => setMobileOpen(false)}
-              className="flex items-center justify-center h-10 rounded-xl text-sm font-semibold transition-all duration-200 hover:brightness-110"
-              style={{
-                background:
-                  "linear-gradient(135deg, #0fb8a0 0%, #0d9e8a 50%, #0a8875 100%)",
-                color: "#ffffff",
-                boxShadow: "0 2px 12px rgba(15,184,160,0.3)",
-              }}
-            >
-              Get Started
-            </Link>
+              {mobileOpen ? (
+                <X className="h-5 w-5" aria-hidden="true" />
+              ) : (
+                <Menu className="h-5 w-5" aria-hidden="true" />
+              )}
+            </button>
+          </div>
+
+          {/* ── Mobile menu drawer ── */}
+          <div
+            id="mobile-menu"
+            role="region"
+            aria-label="Mobile navigation"
+            className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileOpen ? "max-h-80 opacity-100 mt-4 pt-4 border-t border-white/10" : "max-h-0 opacity-0"
+              }`}
+          >
+            <div className="flex flex-col gap-1 pb-2">
+              {/* Mobile nav links */}
+              <nav className="flex flex-col gap-1" aria-label="Mobile primary navigation">
+                {NAV_LINKS.map(({ label, href }) => {
+                  const active =
+                    href === "/" ? pathname === "/" : pathname.startsWith(href);
+                  return (
+                    <Link
+                      key={href}
+                      href={href}
+                      onClick={() => setMobileOpen(false)}
+                      className={`flex items-center px-3 py-2 rounded-xl text-sm font-medium transition-colors duration-150 ${active
+                          ? "text-[#00c9a7] bg-white/10 font-semibold"
+                          : "text-white/90 hover:bg-white/5 hover:text-white"
+                        }`}
+                      aria-current={active ? "page" : undefined}
+                    >
+                      {label}
+                    </Link>
+                  );
+                })}
+              </nav>
+
+              {/* Mobile CTA buttons */}
+              <div className="mt-3 flex flex-col gap-2.5 border-t border-white/10 pt-3">
+                <Link
+                  href="/login"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center justify-center h-10 rounded-xl text-sm font-medium text-white/90 border border-white/15 bg-white/5 transition-colors duration-150 hover:bg-white/10"
+                >
+                  Log In
+                </Link>
+                <Link
+                  href="/get-started"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center justify-center h-10 rounded-xl text-sm font-semibold text-white bg-[#00c9a7] shadow-[0_4px_16px_rgba(0,201,167,0.35)] transition-all duration-200 hover:bg-[#00b497]"
+                >
+                  Get Started
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
