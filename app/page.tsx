@@ -7,7 +7,7 @@ import TrustFeatures from "@/components/home/TrustFeatures";
 import HowItWorks from "@/components/home/HowItWorks";
 import HeroSection from "@/components/home/HeroSection";
 import VideoShowcase from "@/components/home/VideoShowcase";
-import FinalCTA from "@/components/home/FinalCTA";
+import FinalCTA from "@/components/shared/FinalCTA";
 
 export default function Home() {
   return (
