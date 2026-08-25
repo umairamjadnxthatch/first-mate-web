@@ -6,25 +6,21 @@ const boats = [
     name: "Pontoon",
     description: "Spacious, stable and perfect for relaxing with family and friends.",
     image: "/home/pontoon.jpg",
-    highlight: true,
   },
   {
     name: "Bowrider",
     description: "Versatile and sporty for cruising, skiing and day adventures.",
     image: "/home/bowrider.jpg",
-    highlight: false,
   },
   {
     name: "Center Console",
     description: "Built for fishing and performance on the water.",
     image: "/home/center_console.jpg",
-    highlight: false,
   },
   {
     name: "Surf Boat",
     description: "Engineered for wakesurfing and creating the perfect wave.",
     image: "/home/surf_boat.jpg",
-    highlight: false,
   },
 ];
 
@@ -51,11 +47,7 @@ export default function BoatSelection() {
           {boats.map((boat) => (
             <div
               key={boat.name}
-              className={`group flex flex-col overflow-hidden rounded-3xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
-                boat.highlight
-                  ? "shadow-lg shadow-[#00a896]/20"
-                  : "border border-slate-200/90 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)]"
-              }`}
+              className="group flex flex-col overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-[#00a896]/20 hover:border-[#00a896]/30"
             >
               <div className="relative h-48 w-full overflow-hidden">
                 <Image
@@ -69,19 +61,11 @@ export default function BoatSelection() {
                   <Anchor className="h-4 w-4" />
                 </span>
               </div>
-              <div
-                className={`flex flex-1 flex-col justify-start p-6 ${
-                  boat.highlight
-                    ? "bg-gradient-to-b from-[#00a896] to-[#00bfa5] text-white"
-                    : "bg-white text-[#0f172a]"
-                }`}
-              >
-                <h3 className="text-lg font-bold tracking-tight">{boat.name}</h3>
-                <p
-                  className={`mt-2 text-sm leading-relaxed ${
-                    boat.highlight ? "text-white/90" : "text-[#64748b]"
-                  }`}
-                >
+              <div className="flex flex-1 flex-col justify-start p-6 bg-white text-[#0f172a] transition-all duration-300 group-hover:bg-gradient-to-b group-hover:from-[#00a896] group-hover:to-[#00bfa5] group-hover:text-white">
+                <h3 className="text-lg font-bold tracking-tight text-[#0f172a] transition-colors duration-300 group-hover:text-white">
+                  {boat.name}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#64748b] transition-colors duration-300 group-hover:text-white/90">
                   {boat.description}
                 </p>
               </div>
