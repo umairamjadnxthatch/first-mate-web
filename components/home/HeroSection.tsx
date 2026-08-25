@@ -30,7 +30,7 @@ const floatingCards = [
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden py-20 sm:py-28">
+    <section className="relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28">
       {/* Full-bleed hero background image */}
       <Image
         src="/home/herobgimage.png"

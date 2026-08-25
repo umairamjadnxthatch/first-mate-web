@@ -65,12 +65,13 @@ export default function Navbar() {
   }, [pathname]);
 
   return (
-    <header className="relative z-50 w-full px-4 pt-3.5 pb-2 sm:px-6 sm:pt-5 lg:px-8">
+    <header className="absolute top-0 inset-x-0 z-50 w-full px-4 pt-3.5 pb-2 sm:px-6 sm:pt-5 lg:px-8 pointer-events-none">
       {/* ── Floating capsule pill container ── */}
-      <div className="mx-auto max-w-6xl">
+      <div className="relative z-50 mx-auto max-w-6xl pointer-events-auto">
         <div
-          className={`relative rounded-2xl sm:rounded-2xl border border-white/10 bg-gradient-to-r from-[#06273e] via-[#093954] to-[#041c2c] px-4 py-2.5 sm:px-6 sm:py-3 shadow-[0_12px_40px_rgba(0,0,0,0.38)] backdrop-blur-md transition-all duration-300 ${scrolled ? "shadow-[0_16px_50px_rgba(0,0,0,0.48)] border-sky-500/20" : ""
-            }`}
+          className={`relative z-50 rounded-2xl sm:rounded-2xl border border-white/10 bg-gradient-to-r from-[#06273e] via-[#093954] to-[#041c2c] px-4 py-2.5 sm:px-6 sm:py-3 shadow-[0_12px_40px_rgba(0,0,0,0.38)] backdrop-blur-md transition-all duration-300 ${
+            scrolled ? "shadow-[0_16px_50px_rgba(0,0,0,0.48)] border-sky-500/20" : ""
+          }`}
         >
           <div className="flex items-center justify-between gap-4">
             {/* ── Logo ── */}
