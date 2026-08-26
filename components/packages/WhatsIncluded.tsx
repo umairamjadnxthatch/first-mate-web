@@ -1,4 +1,5 @@
 import { Check, ShieldCheck, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 const rows = [
   { feature: "AI Boating Coach", monthly: true, annual: true },
@@ -58,23 +59,29 @@ export default function WhatsIncluded() {
         </div>
 
         {/* Complimentary access callout */}
-        <div className="mt-6 flex w-full items-center justify-between gap-4 rounded-2xl border border-[#dbeafe]/80 bg-[#f0f6fb] p-4 text-left shadow-sm sm:p-5">
+        <Link
+          href="/contact"
+          className="group mt-6 flex w-full cursor-pointer items-center justify-between gap-4 rounded-2xl border border-[#dbeafe]/80 bg-[#f0f6fb] p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#00a896]/50 hover:shadow-md sm:p-5"
+        >
           <div className="flex items-center gap-4">
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#0b1e33] text-white shadow-sm">
               <ShieldCheck className="h-5 w-5 text-[#38bdf8]" />
             </span>
+
             <div>
               <p className="text-sm font-bold text-[#0f172a] sm:text-base">
                 Complimentary Access
               </p>
+
               <p className="mt-0.5 text-xs text-[#64748b] sm:text-sm">
-                Training students may receive complimentary access, provided
-                and managed by their instructor.
+                Training students may receive complimentary access, provided and
+                managed by their instructor.
               </p>
             </div>
           </div>
-          <ChevronRight className="h-5 w-5 shrink-0 text-[#94a3b8]" />
-        </div>
+
+          <ChevronRight className="h-5 w-5 shrink-0 text-[#94a3b8] transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[#00a896]" />
+        </Link>
       </div>
     </section>
   );

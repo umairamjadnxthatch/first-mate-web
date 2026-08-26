@@ -35,8 +35,8 @@ function NavLink({
       href={href}
       onClick={onClick}
       className={`text-sm font-medium tracking-normal transition-colors duration-200 ${active
-          ? "text-[#00c9a7] font-semibold"
-          : "text-white/90 hover:text-white"
+        ? "text-[#00c9a7] font-semibold"
+        : "text-white/90 hover:text-white"
         }`}
       aria-current={active ? "page" : undefined}
     >
@@ -69,9 +69,8 @@ export default function Navbar() {
       {/* ── Floating capsule pill container ── */}
       <div className="relative z-50 mx-auto max-w-6xl pointer-events-auto">
         <div
-          className={`relative z-50 rounded-2xl sm:rounded-2xl border border-white/10 bg-gradient-to-r from-[#06273e] via-[#093954] to-[#041c2c] px-4 py-2.5 sm:px-6 sm:py-3 shadow-[0_12px_40px_rgba(0,0,0,0.38)] backdrop-blur-md transition-all duration-300 ${
-            scrolled ? "shadow-[0_16px_50px_rgba(0,0,0,0.48)] border-sky-500/20" : ""
-          }`}
+          className={`relative z-50 rounded-2xl sm:rounded-2xl border border-white/10 bg-gradient-to-r from-[#06273e] via-[#093954] to-[#041c2c] px-4 py-2.5 sm:px-6 sm:py-3 shadow-[0_12px_40px_rgba(0,0,0,0.38)] backdrop-blur-md transition-all duration-300 ${scrolled ? "shadow-[0_16px_50px_rgba(0,0,0,0.48)] border-sky-500/20" : ""
+            }`}
         >
           <div className="flex items-center justify-between gap-4">
             {/* ── Logo ── */}
@@ -81,13 +80,13 @@ export default function Navbar() {
               aria-label="First Mate – go to homepage"
             >
               {/* White rounded icon box */}
-              <span className="flex h-9 w-9 sm:h-10 sm:w-10 flex-shrink-0 items-center justify-center rounded-xl bg-white p-1 sm:p-1.5 shadow-sm transition-transform duration-200 group-hover:scale-105 overflow-hidden">
+              <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white p-1 shadow-sm transition-transform duration-200 group-hover:scale-105 sm:h-10 sm:w-10 sm:p-1.5">
                 <Image
                   src={logoIcon}
                   alt="First Mate"
                   width={40}
                   height={40}
-                  className="h-full w-full object-cover object-center scale-110"
+                  className="h-full w-full scale-[2.4] object-contain"
                   priority
                 />
               </span>
@@ -173,8 +172,8 @@ export default function Navbar() {
                       href={href}
                       onClick={() => setMobileOpen(false)}
                       className={`flex items-center px-3 py-2 rounded-xl text-sm font-medium transition-colors duration-150 ${active
-                          ? "text-[#00c9a7] bg-white/10 font-semibold"
-                          : "text-white/90 hover:bg-white/5 hover:text-white"
+                        ? "text-[#00c9a7] bg-white/10 font-semibold"
+                        : "text-white/90 hover:bg-white/5 hover:text-white"
                         }`}
                       aria-current={active ? "page" : undefined}
                     >

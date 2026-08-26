@@ -148,13 +148,15 @@ export default function Footer() {
               className="inline-flex items-center gap-3 group"
               aria-label="First Mate home"
             >
-              <span className="flex h-10 w-10 sm:h-11 sm:w-11 flex-shrink-0 items-center justify-center rounded-xl bg-white p-1 sm:p-1.5 shadow-sm transition-transform duration-200 group-hover:scale-105 overflow-hidden">
+
+              <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white p-1 shadow-sm transition-transform duration-200 group-hover:scale-105 sm:h-10 sm:w-10 sm:p-1.5">
                 <Image
                   src={logoIcon}
                   alt="First Mate"
-                  width={44}
-                  height={44}
-                  className="h-full w-full object-cover object-center scale-110"
+                  width={40}
+                  height={40}
+                  className="h-full w-full scale-[2.4] object-contain"
+                  priority
                 />
               </span>
               <span
