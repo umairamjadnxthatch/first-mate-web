@@ -9,24 +9,22 @@ const navColumns = [
   {
     heading: "Product",
     links: [
-      { label: "How It Works", href: "/how-it-works" },
-      { label: "Features", href: "/features" },
-      { label: "FAQs", href: "/faqs" },
+      { label: "How It Works", href: "/#how-it-works" },
+      { label: "Packages", href: "/packages" },
     ],
   },
   {
     heading: "Company",
     links: [
       { label: "About Us", href: "/about" },
-      { label: "Contact", href: "/contact" },
-      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Contact Us", href: "/contact" },
     ],
   },
   {
     heading: "Legal",
     links: [
+      { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Terms & Conditions", href: "/terms-conditions" },
-      { label: "Disclaimer", href: "/disclaimer" },
     ],
   },
 ];

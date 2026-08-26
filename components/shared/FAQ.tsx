@@ -54,7 +54,7 @@ export default function FAQ({
   };
 
   return (
-    <section className="bg-[#f0f4f9] py-20 sm:py-28">
+    <section id="faq" className="bg-[#f0f4f9] py-20 sm:py-28">
       <div className="mx-auto max-w-3xl px-6">
         <div className="flex flex-col items-center text-center">
           <h2 className="text-4xl font-extrabold tracking-tight text-[#0f172a] sm:text-5xl">
@@ -87,11 +87,10 @@ export default function FAQ({
                     {faq.question}
                   </span>
                   <span
-                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors ${
-                      isOpen
-                        ? "bg-[#00a896] text-white shadow-sm"
-                        : "bg-[#f1f5f9] text-[#64748b] hover:bg-[#e2e8f0]"
-                    }`}
+                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors ${isOpen
+                      ? "bg-[#00a896] text-white shadow-sm"
+                      : "bg-[#f1f5f9] text-[#64748b] hover:bg-[#e2e8f0]"
+                      }`}
                   >
                     {isOpen ? (
                       <Minus className="h-4 w-4 stroke-[2.5]" />

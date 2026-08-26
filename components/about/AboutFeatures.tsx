@@ -33,7 +33,7 @@ const items = [
 
 export default function AboutFeatures() {
   return (
-    <section className="bg-[#eef3f7] py-14 sm:py-20">
+    <section id="features" className="bg-[#eef3f7] py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {items.map(({ number, icon: Icon, title, description }) => (
