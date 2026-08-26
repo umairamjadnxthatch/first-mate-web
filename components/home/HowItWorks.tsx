@@ -46,10 +46,10 @@ export default function HowItWorks() {
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
-            <button className="w-full rounded-lg bg-gradient-to-r from-[#00a896] to-[#02b8a2] px-7 py-3 text-sm font-semibold text-white shadow-md shadow-[#00a896]/30 transition-all duration-200 hover:brightness-110 sm:w-auto">
+            <button className="w-full cursor-pointer rounded-lg bg-gradient-to-r from-[#00a896] to-[#02b8a2] px-7 py-3 text-sm font-semibold text-white shadow-md shadow-[#00a896]/30 transition-all duration-200 hover:brightness-110 sm:w-auto">
               Start Learning
             </button>
-            <button className="w-full rounded-lg border border-[#38bdf8]/40 bg-[#04283f]/60 px-7 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-[#07395a] sm:w-auto">
+            <button className="w-full cursor-pointer rounded-lg border border-[#38bdf8]/40 bg-[#04283f]/60 px-7 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-[#07395a] sm:w-auto">
               Explore Packages
             </button>
           </div>

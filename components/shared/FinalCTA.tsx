@@ -25,10 +25,10 @@ export default function FinalCTA() {
 
         {/* CTA buttons */}
         <div className="mt-8 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
-          <button className="w-full rounded-xl bg-[#00b49c] px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-[#00b49c]/25 transition-all duration-200 hover:brightness-110 hover:scale-[1.02] active:scale-[0.98] sm:w-auto">
+          <button className="w-full cursor-pointer rounded-xl bg-[#00b49c] px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-[#00b49c]/25 transition-all duration-200 hover:brightness-110 hover:scale-[1.02] active:scale-[0.98] sm:w-auto">
             Get Started
           </button>
-          <button className="w-full rounded-xl border border-white/70 bg-[#0c354e]/40 px-7 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/15 hover:border-white sm:w-auto">
+          <button className="w-full cursor-pointer rounded-xl border border-white/70 bg-[#0c354e]/40 px-7 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/15 hover:border-white sm:w-auto">
             Contact Us
           </button>
         </div>

@@ -206,7 +206,7 @@ export default function ContactForm() {
                                     <div className="pt-2">
                                         <button
                                             type="submit"
-                                            className="inline-flex items-center gap-2.5 rounded-xl bg-[#00a896] px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-[#00a896]/30 transition-all duration-200 hover:bg-[#009686] hover:scale-[1.02] active:scale-[0.98]"
+                                            className="inline-flex cursor-pointer items-center gap-2.5 rounded-xl bg-[#00a896] px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-[#00a896]/30 transition-all duration-200 hover:bg-[#009686] hover:scale-[1.02] active:scale-[0.98]"
                                         >
                                             <span>Send Message</span>
                                             <Send className="h-4 w-4" />

@@ -85,7 +85,7 @@ export default function VideoShowcase() {
             confidence on the water.
           </p>
 
-          <button className="mt-8 rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]">
+          <button className="mt-8 cursor-pointer rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]">
             Try First Mate
           </button>
         </div>

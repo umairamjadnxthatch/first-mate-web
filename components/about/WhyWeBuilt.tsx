@@ -38,7 +38,7 @@ export default function WhyWeBuilt() {
           Mate to cut through the noise and deliver clear, study-based
           guidance when you need it most.
         </p>
-        <button className="mt-8 rounded-lg bg-[#07557c] px-8 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#053d5a]">
+        <button className="mt-8 cursor-pointer rounded-lg bg-[#07557c] px-8 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#053d5a]">
           Get Started
         </button>
       </div>

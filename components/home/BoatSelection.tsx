@@ -38,7 +38,7 @@ export default function BoatSelection() {
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-[#475569] sm:text-base">
             Get personalized guidance based on your boat type.
           </p>
-          <button className="mt-8 rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]">
+          <button className="mt-8 cursor-pointer rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]">
             Start Learning
           </button>
         </div>
@@ -47,7 +47,7 @@ export default function BoatSelection() {
           {boats.map((boat) => (
             <div
               key={boat.name}
-              className="group flex flex-col overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-[#00a896]/20 hover:border-[#00a896]/30"
+              className="group flex cursor-pointer flex-col overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-[#00a896]/20 hover:border-[#00a896]/30"
             >
               <div className="relative h-48 w-full overflow-hidden">
                 <Image

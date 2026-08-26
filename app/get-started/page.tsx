@@ -90,10 +90,10 @@ export default function GetStartedPage() {
                         </div>
 
                         {/* Terms */}
-                        <label className="flex items-start gap-2 text-xs leading-relaxed text-[#64748b]">
+                        <label className="flex cursor-pointer items-start gap-2 text-xs leading-relaxed text-[#64748b]">
                             <input
                                 type="checkbox"
-                                className="mt-0.5 h-4 w-4 shrink-0 rounded border-slate-300 accent-[#07557c]"
+                                className="mt-0.5 h-4 w-4 cursor-pointer shrink-0 rounded border-slate-300 accent-[#07557c]"
                             />
                             <span>
                                 I agree to the{" "}
@@ -117,7 +117,7 @@ export default function GetStartedPage() {
                         {/* Button */}
                         <button
                             type="submit"
-                            className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#07557c] px-6 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#00a896] hover:shadow-lg"
+                            className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#07557c] px-6 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#00a896] hover:shadow-lg"
                         >
                             Create Account
                             <ArrowRight className="h-4 w-4" />

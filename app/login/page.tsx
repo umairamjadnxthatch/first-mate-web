@@ -77,10 +77,10 @@ export default function LoginPage() {
                         </div>
 
                         {/* Remember */}
-                        <label className="flex items-center gap-2 text-sm text-[#64748b]">
+                        <label className="flex cursor-pointer items-center gap-2 text-sm text-[#64748b]">
                             <input
                                 type="checkbox"
-                                className="h-4 w-4 rounded border-slate-300 accent-[#07557c]"
+                                className="h-4 w-4 cursor-pointer rounded border-slate-300 accent-[#07557c]"
                             />
                             Remember me
                         </label>
@@ -88,7 +88,7 @@ export default function LoginPage() {
                         {/* Button */}
                         <button
                             type="submit"
-                            className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#07557c] px-6 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#00a896] hover:shadow-lg"
+                            className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#07557c] px-6 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#00a896] hover:shadow-lg"
                         >
                             Sign In
                             <ArrowRight className="h-4 w-4" />

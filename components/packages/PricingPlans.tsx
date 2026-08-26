@@ -62,7 +62,7 @@ export default function PricingPlans() {
           <p className="mt-3 text-sm text-[#64748b] sm:text-base">
             Simple pricing. Powerful coaching.
           </p>
-          <button className="mt-7 rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]">
+          <button className="mt-7 cursor-pointer rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]">
             Start Learning
           </button>
         </div>
@@ -108,7 +108,7 @@ export default function PricingPlans() {
                 </div>
 
                 <button
-                  className={`mt-8 w-full rounded-xl py-3 text-sm font-semibold shadow-sm transition-all duration-200 ${
+                  className={`mt-8 w-full cursor-pointer rounded-xl py-3 text-sm font-semibold shadow-sm transition-all duration-200 ${
                     plan.buttonStyle === "dark"
                       ? "bg-[#0b1e33] text-white hover:bg-[#071524]"
                       : "bg-[#00a896] text-white hover:bg-[#009686] shadow-[#00a896]/20 shadow-md"

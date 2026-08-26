@@ -64,7 +64,7 @@ export default function FAQ({
             {description}
           </p>
           {showCta && (
-            <button className="mt-7 rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]">
+            <button className="mt-7 cursor-pointer rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]">
               Get Started
             </button>
           )}
@@ -81,7 +81,7 @@ export default function FAQ({
                 <button
                   onClick={() => toggle(index)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+                  className="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left"
                 >
                   <span className="text-sm font-bold text-[#0f172a] sm:text-base">
                     {faq.question}

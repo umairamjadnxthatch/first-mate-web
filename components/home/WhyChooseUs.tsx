@@ -44,7 +44,7 @@ export default function WhyChooseUs() {
             guidance, and knowledge checks to help you build practical
             knowledge and confidence—one question at a time.
           </p>
-          <button className="mt-8 rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]">
+          <button className="mt-8 cursor-pointer rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]">
             Get Started
           </button>
         </div>
@@ -53,7 +53,7 @@ export default function WhyChooseUs() {
           {items.map(({ icon: Icon, title, description }) => (
             <div
               key={title}
-              className="group flex flex-col justify-start rounded-3xl border border-slate-200/90 bg-white p-7 text-[#0f172a] shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-transparent hover:bg-gradient-to-b hover:from-[#00a896] hover:to-[#00bfa5] hover:text-white hover:shadow-xl hover:shadow-[#00a896]/20"
+              className="group flex cursor-pointer flex-col justify-start rounded-3xl border border-slate-200/90 bg-white p-7 text-[#0f172a] shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-transparent hover:bg-gradient-to-b hover:from-[#00a896] hover:to-[#00bfa5] hover:text-white hover:shadow-xl hover:shadow-[#00a896]/20"
             >
               <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl border border-[#38bdf8]/30 bg-[#e0f2fe]/60 text-[#00a896] shadow-sm transition-all duration-300 ease-out group-hover:border-transparent group-hover:bg-white group-hover:text-[#00a896]">
                 <Icon className="h-6 w-6" strokeWidth={1.75} />

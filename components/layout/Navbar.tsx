@@ -139,7 +139,7 @@ export default function Navbar() {
             {/* ── Mobile hamburger ── */}
             <button
               type="button"
-              className="md:hidden flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 text-white transition-colors duration-150 hover:bg-white/15"
+              className="md:hidden flex h-9 w-9 cursor-pointer items-center justify-center rounded-xl bg-white/10 text-white transition-colors duration-150 hover:bg-white/15"
               onClick={() => setMobileOpen((o) => !o)}
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"
