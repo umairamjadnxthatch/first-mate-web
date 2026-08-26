@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Anchor } from "lucide-react";
+import Link from "next/link";
 
 const boats = [
   {
@@ -38,9 +39,12 @@ export default function BoatSelection() {
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-[#475569] sm:text-base">
             Get personalized guidance based on your boat type.
           </p>
-          <button className="mt-8 cursor-pointer rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]">
+          <Link
+            href="/get-started"
+            className="mt-8 inline-flex cursor-pointer items-center justify-center rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]"
+          >
             Start Learning
-          </button>
+          </Link>
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">

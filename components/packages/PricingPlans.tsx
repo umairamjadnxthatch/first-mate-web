@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import Link from "next/link";
 
 const features = [
   "AI Boating Coach",
@@ -62,9 +63,12 @@ export default function PricingPlans() {
           <p className="mt-3 text-sm text-[#64748b] sm:text-base">
             Simple pricing. Powerful coaching.
           </p>
-          <button className="mt-7 cursor-pointer rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]">
+          <Link
+            href="/get-started"
+            className="mt-7 inline-flex cursor-pointer items-center justify-center rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]"
+          >
             Start Learning
-          </button>
+          </Link>
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -76,11 +80,10 @@ export default function PricingPlans() {
                 </span>
               )}
               <div
-                className={`flex h-full flex-col justify-between rounded-3xl bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl ${
-                  plan.border === "teal"
-                    ? "border-2 border-[#00a896]"
-                    : "border border-slate-200/90"
-                }`}
+                className={`flex h-full flex-col justify-between rounded-3xl bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl ${plan.border === "teal"
+                  ? "border-2 border-[#00a896]"
+                  : "border border-slate-200/90"
+                  }`}
               >
                 <div>
                   <h3 className="text-lg font-bold text-[#0f172a]">
@@ -108,11 +111,10 @@ export default function PricingPlans() {
                 </div>
 
                 <button
-                  className={`mt-8 w-full cursor-pointer rounded-xl py-3 text-sm font-semibold shadow-sm transition-all duration-200 ${
-                    plan.buttonStyle === "dark"
-                      ? "bg-[#0b1e33] text-white hover:bg-[#071524]"
-                      : "bg-[#00a896] text-white hover:bg-[#009686] shadow-[#00a896]/20 shadow-md"
-                  }`}
+                  className={`mt-8 w-full cursor-pointer rounded-xl py-3 text-sm font-semibold shadow-sm transition-all duration-200 ${plan.buttonStyle === "dark"
+                    ? "bg-[#0b1e33] text-white hover:bg-[#071524]"
+                    : "bg-[#00a896] text-white hover:bg-[#009686] shadow-[#00a896]/20 shadow-md"
+                    }`}
                 >
                   Get Started
                 </button>

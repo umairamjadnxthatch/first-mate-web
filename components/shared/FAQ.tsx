@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import Link from "next/link";
 
 export type FAQItem = {
   question: string;
@@ -64,9 +65,11 @@ export default function FAQ({
             {description}
           </p>
           {showCta && (
-            <button className="mt-7 cursor-pointer rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]">
+            <Link
+              href="/get-started"
+              className="mt-7 cursor-pointer rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]">
               Get Started
-            </button>
+            </Link>
           )}
         </div>
 

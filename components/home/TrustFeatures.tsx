@@ -1,4 +1,5 @@
 import { BookOpen, User, ClipboardCheck, ShieldCheck } from "lucide-react";
+import Link from "next/link";
 
 const items = [
   {
@@ -47,9 +48,12 @@ export default function TrustFeatures() {
             boating studies. Ask anything, get instant coaching, and build
             your confidence on the water.
           </p>
-          <button className="mt-8 cursor-pointer rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]">
+          <Link
+            href="/about"
+            className="mt-8 inline-flex cursor-pointer items-center justify-center rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]"
+          >
             More About It
-          </button>
+          </Link>
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">

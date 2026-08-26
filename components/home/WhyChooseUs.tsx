@@ -1,4 +1,5 @@
 import { ShieldCheck, MessagesSquare, Sparkles, Compass } from "lucide-react";
+import Link from "next/link";
 
 const items = [
   {
@@ -44,9 +45,12 @@ export default function WhyChooseUs() {
             guidance, and knowledge checks to help you build practical
             knowledge and confidence—one question at a time.
           </p>
-          <button className="mt-8 cursor-pointer rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]">
+          <Link
+            href="/get-started"
+            className="mt-8 cursor-pointer rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]"
+          >
             Get Started
-          </button>
+          </Link>
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
