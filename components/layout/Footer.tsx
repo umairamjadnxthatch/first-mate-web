@@ -25,7 +25,7 @@ const navColumns = [
   {
     heading: "Legal",
     links: [
-      { label: "Terms of Service", href: "/terms" },
+      { label: "Terms & Conditions", href: "/terms-conditions" },
       { label: "Disclaimer", href: "/disclaimer" },
     ],
   },
