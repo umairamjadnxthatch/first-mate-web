@@ -18,17 +18,17 @@ export default function WhatsIncluded() {
           What&apos;s Included
         </h2>
 
-        <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm sm:rounded-3xl">
-          <table className="w-full text-left text-sm">
+        <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-200/80 bg-white shadow-sm sm:rounded-3xl">
+          <table className="w-full min-w-[480px] text-left text-sm sm:min-w-0">
             <thead>
               <tr className="border-b border-slate-100 bg-[#f8fafc] text-[#0f172a]">
-                <th className="px-6 py-4 font-semibold text-xs uppercase tracking-wider text-[#64748b] sm:text-sm">
+                <th className="px-4 sm:px-6 py-3.5 sm:py-4 font-semibold text-xs uppercase tracking-wider text-[#64748b] sm:text-sm">
                   Feature
                 </th>
-                <th className="px-6 py-4 text-center font-semibold text-xs uppercase tracking-wider text-[#64748b] sm:text-sm">
+                <th className="px-4 sm:px-6 py-3.5 sm:py-4 text-center font-semibold text-xs uppercase tracking-wider text-[#64748b] sm:text-sm">
                   Monthly
                 </th>
-                <th className="px-6 py-4 text-center font-semibold text-xs uppercase tracking-wider text-[#64748b] sm:text-sm">
+                <th className="px-4 sm:px-6 py-3.5 sm:py-4 text-center font-semibold text-xs uppercase tracking-wider text-[#64748b] sm:text-sm">
                   Annual
                 </th>
               </tr>
@@ -39,15 +39,15 @@ export default function WhatsIncluded() {
                   key={row.feature}
                   className={i % 2 === 1 ? "bg-[#fafcff]/60" : "bg-white"}
                 >
-                  <td className="px-6 py-4.5 font-medium text-[#334155]">
+                  <td className="px-4 sm:px-6 py-3.5 sm:py-4.5 font-medium text-[#334155]">
                     {row.feature}
                   </td>
-                  <td className="px-6 py-4.5 text-center">
+                  <td className="px-4 sm:px-6 py-3.5 sm:py-4.5 text-center">
                     {row.monthly && (
                       <Check className="mx-auto h-5 w-5 text-[#00a896] stroke-[2.5]" />
                     )}
                   </td>
-                  <td className="px-6 py-4.5 text-center">
+                  <td className="px-4 sm:px-6 py-3.5 sm:py-4.5 text-center">
                     {row.annual && (
                       <Check className="mx-auto h-5 w-5 text-[#00a896] stroke-[2.5]" />
                     )}

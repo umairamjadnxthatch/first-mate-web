@@ -120,7 +120,7 @@ export default function Navbar() {
             <div className="hidden md:flex items-center gap-5">
               {/* Log In */}
               <Link
-                href="/login"
+                href="https://first-mate-beta.vercel.app/login"
                 className="text-sm font-medium text-white/90 transition-colors duration-200 hover:text-white"
               >
                 Log In
@@ -128,7 +128,7 @@ export default function Navbar() {
 
               {/* Get Started Button */}
               <Link
-                href="/get-started"
+                href="https://first-mate-beta.vercel.app/signup"
                 className="inline-flex items-center justify-center rounded-xl bg-[#00c9a7] px-5 sm:px-6 py-2.5 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(0,201,167,0.4)] transition-all duration-200 hover:bg-[#00b497] hover:shadow-[0_6px_24px_rgba(0,201,167,0.55)] hover:scale-[1.02] active:scale-[0.98]"
               >
                 Get Started
@@ -186,14 +186,15 @@ export default function Navbar() {
               {/* Mobile CTA buttons */}
               <div className="mt-3 flex flex-col gap-2.5 border-t border-white/10 pt-3">
                 <Link
-                  href="/login"
+
+                  href="https://first-mate-beta.vercel.app/login"
                   onClick={() => setMobileOpen(false)}
                   className="flex items-center justify-center h-10 rounded-xl text-sm font-medium text-white/90 border border-white/15 bg-white/5 transition-colors duration-150 hover:bg-white/10"
                 >
                   Log In
                 </Link>
                 <Link
-                  href="/get-started"
+                  href="https://first-mate-beta.vercel.app/signup"
                   onClick={() => setMobileOpen(false)}
                   className="flex items-center justify-center h-10 rounded-xl text-sm font-semibold text-white bg-[#00c9a7] shadow-[0_4px_16px_rgba(0,201,167,0.35)] transition-all duration-200 hover:bg-[#00b497]"
                 >
