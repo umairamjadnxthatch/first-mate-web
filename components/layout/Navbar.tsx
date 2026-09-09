@@ -83,7 +83,7 @@ export default function Navbar() {
               <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white p-1 shadow-sm transition-transform duration-200 group-hover:scale-105 sm:h-10 sm:w-10 sm:p-1.5">
                 <Image
                   src={logoIcon}
-                  alt="First Mate"
+                  alt="First Mate Coach"
                   width={40}
                   height={40}
                   className="h-full w-full scale-[2.4] object-contain"
@@ -93,7 +93,7 @@ export default function Navbar() {
 
               {/* Brand name */}
               <span className="text-base sm:text-lg font-bold tracking-tight text-white">
-                First Mate
+                First Mate Coach
               </span>
             </Link>
 

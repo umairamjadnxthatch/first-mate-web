@@ -160,10 +160,10 @@ export default function Footer() {
                 />
               </span>
               <span
-                className="text-xl font-semibold tracking-tight"
+                className="text-lg font-semibold tracking-tight"
                 style={{ color: "#f0f6fc" }}
               >
-                First Mate
+                First Mate Coach
               </span>
             </Link>
 
@@ -265,9 +265,30 @@ export default function Footer() {
         />
 
         {/* ── Copyright ── */}
-        <p className="text-center text-sm" style={{ color: "#4d718a" }}>
+        {/* <p className="text-center text-sm" style={{ color: "#4d718a" }}>
           © 2026 First Mate. All rights reserved.
-        </p>
+        </p> */}
+
+        {/* ── Copyright & Developer ── */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <p className="text-sm" style={{ color: "#4d718a" }}>
+            © 2026 First Mate. All rights reserved.
+          </p>
+
+          <p className="text-sm" style={{ color: "#4d718a" }}>
+            Design & Developed by{" "}
+            <a
+              href="https://www.nxthatch.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium transition-colors duration-200 hover:text-white"
+              style={{ color: "#6b9bb5" }}
+              aria-label="Nxthatch Technologies website"
+            >
+              Nxthatch Technologies
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
