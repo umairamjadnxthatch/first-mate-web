@@ -60,7 +60,7 @@ export default function HeroSection() {
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
           <Link
-            href="/get-started"
+            href="https://first-mate-beta.vercel.app/signup"
             className="w-full cursor-pointer rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a] sm:w-auto"
           >
             Start Learning

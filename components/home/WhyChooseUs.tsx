@@ -46,7 +46,7 @@ export default function WhyChooseUs() {
             knowledge and confidence—one question at a time.
           </p>
           <Link
-            href="/get-started"
+            href="https://first-mate-beta.vercel.app/signup"
             className="mt-8 cursor-pointer rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]"
           >
             Get Started

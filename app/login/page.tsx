@@ -246,7 +246,7 @@ export default function LoginPage() {
                         <p className="mt-6 text-center text-sm text-[#64748b]">
                             Don&apos;t have an account?{" "}
                             <Link
-                                href="/get-started"
+                                href="https://first-mate-beta.vercel.app/signup"
                                 className="font-semibold text-[#07557c] hover:text-[#00a896]"
                             >
                                 Get Started

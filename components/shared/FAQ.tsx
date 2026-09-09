@@ -66,7 +66,7 @@ export default function FAQ({
           </p>
           {showCta && (
             <Link
-              href="/get-started"
+              href="https://first-mate-beta.vercel.app/signup"
               className="mt-7 cursor-pointer rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]">
               Get Started
             </Link>

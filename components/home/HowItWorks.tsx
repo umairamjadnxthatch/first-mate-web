@@ -48,7 +48,7 @@ export default function HowItWorks() {
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
             <Link
-              href="/get-started"
+              href="https://first-mate-beta.vercel.app/signup"
               className="w-full cursor-pointer rounded-lg bg-gradient-to-r from-[#00a896] to-[#02b8a2] px-7 py-3 text-center text-sm font-semibold text-white shadow-md shadow-[#00a896]/30 transition-all duration-200 hover:brightness-110 sm:w-auto"
             >
               Start Learning

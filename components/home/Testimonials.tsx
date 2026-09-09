@@ -23,7 +23,55 @@ const testimonials = [
     name: "Jordan T.",
     role: "Surf Boat Owner",
     quote:
-      "The conversation history is a great touch — I can look back at everything I've learned so far.",
+      "The conversation history is a great touch. I can look back at everything I've learned so far.",
+  },
+  {
+    name: "Alex M.",
+    role: "Fishing Boat Owner",
+    quote:
+      "I love how quickly I can get answers while preparing for a day on the water. It makes learning much easier.",
+  },
+  {
+    name: "Chris B.",
+    role: "Ski Boat Owner",
+    quote:
+      "The explanations are simple and practical. I can actually understand what I need to do instead of reading complicated manuals.",
+  },
+  {
+    name: "Samantha L.",
+    role: "Deck Boat Owner",
+    quote:
+      "Having boating information available whenever I need it is incredibly useful. The AI coach has become part of my routine.",
+  },
+  {
+    name: "Michael T.",
+    role: "Cruiser Owner",
+    quote:
+      "The personalized answers make a big difference. I don't have to search through pages of information to find what I need.",
+  },
+  {
+    name: "Rachel P.",
+    role: "Runabout Owner",
+    quote:
+      "The quizzes are my favorite feature. They turn learning into something interactive and help me remember important details.",
+  },
+  {
+    name: "Kevin W.",
+    role: "Wake Boat Owner",
+    quote:
+      "I can ask questions in normal language and get useful answers right away. It feels like having a knowledgeable coach with me.",
+  },
+  {
+    name: "Emily C.",
+    role: "Bay Boat Owner",
+    quote:
+      "The guidance gives me much more confidence when I'm getting ready to head out. Everything feels easier to understand.",
+  },
+  {
+    name: "Robert H.",
+    role: "Cabin Cruiser Owner",
+    quote:
+      "Being able to revisit previous conversations is really helpful. I can keep building my knowledge without starting over.",
   },
 ];
 
@@ -60,9 +108,6 @@ function TestimonialCard({
 }
 
 export default function Testimonials() {
-  // Duplicate the list so the marquee loop is seamless
-  const loop = [...testimonials, ...testimonials, ...testimonials];
-
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[#062c43] via-[#05324e] to-[#062c43] py-20 text-white sm:py-28">
       {/* Subtle ambient lighting */}
@@ -72,26 +117,40 @@ export default function Testimonials() {
         <span className="mb-6 inline-flex items-center justify-center rounded-full border border-[#38bdf8]/50 bg-[#083344]/60 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-[#38bdf8] shadow-sm sm:text-xs">
           Testimonials
         </span>
+
         <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
           Trusted by <span className="text-[#00a896]">Boaters</span>
         </h2>
+
         <p className="mt-4 text-sm text-slate-300 sm:text-base">
           Get personalized guidance based on your boat type.
         </p>
       </div>
 
-      {/* Marquee row */}
+      {/* Horizontal scrollable testimonials */}
       <div className="relative mt-14 sm:mt-16">
-        <div className="flex w-max animate-marquee sm:animate-marquee motion-reduce:animate-none">
-          {loop.map((t, i) => (
-            <TestimonialCard key={i} {...t} />
+        <div
+          className="
+            flex
+            gap-0
+            overflow-x-auto
+            px-6
+            pb-6
+            scroll-smooth
+            snap-x
+            snap-mandatory
+            [scrollbar-width:none]
+            [-ms-overflow-style:none]
+            [&::-webkit-scrollbar]:hidden
+          "
+        >
+          {testimonials.map((testimonial, i) => (
+            <div key={i} className="snap-start">
+              <TestimonialCard {...testimonial} />
+            </div>
           ))}
         </div>
-        {/* Edge fade */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#062c43] to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#062c43] to-transparent" />
       </div>
     </section>
   );
 }
-

@@ -40,7 +40,7 @@ export default function BoatSelection() {
             Get personalized guidance based on your boat type.
           </p>
           <Link
-            href="/get-started"
+            href="https://first-mate-beta.vercel.app/signup"
             className="mt-8 inline-flex cursor-pointer items-center justify-center rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]"
           >
             Start Learning

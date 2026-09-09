@@ -56,7 +56,7 @@ export default function PricingPlans() {
           </p>
 
           <Link
-            href="/get-started"
+            href="https://first-mate-beta.vercel.app/signup"
             className="mt-6 sm:mt-7 inline-flex cursor-pointer items-center justify-center rounded-lg bg-[#07557c] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#08223a]"
           >
             Start Learning
@@ -72,11 +72,10 @@ export default function PricingPlans() {
             return (
               <div
                 key={`${plan.name}-${index}`}
-                className={`relative flex flex-col ${
-                  isThird
+                className={`relative flex flex-col ${isThird
                     ? "sm:col-span-2 sm:max-w-md sm:mx-auto sm:w-full lg:col-span-1 lg:max-w-none"
                     : "w-full max-w-md mx-auto sm:max-w-none"
-                }`}
+                  }`}
               >
                 {/* Badge */}
                 {plan.badge && (
@@ -87,11 +86,10 @@ export default function PricingPlans() {
 
                 {/* Pricing Card */}
                 <div
-                  className={`flex h-full flex-col justify-between rounded-3xl bg-white p-6 sm:p-7 text-[#0f172a] shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:shadow-[#00a896]/10 ${
-                    isFeatured
+                  className={`flex h-full flex-col justify-between rounded-3xl bg-white p-6 sm:p-7 text-[#0f172a] shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:shadow-[#00a896]/10 ${isFeatured
                       ? "border-2 border-[#00a896] shadow-md shadow-[#00a896]/10"
                       : "border border-slate-200/90 hover:border-[#00a896]"
-                  }`}
+                    }`}
                 >
                   <div>
                     {/* Plan Name */}
@@ -128,12 +126,11 @@ export default function PricingPlans() {
 
                   {/* Get Started */}
                   <Link
-                    href="/get-started"
-                    className={`mt-8 flex w-full cursor-pointer items-center justify-center rounded-xl py-3 text-sm font-semibold shadow-sm transition-all duration-200 ${
-                      plan.buttonStyle === "dark"
+                    href="https://first-mate-beta.vercel.app/signup"
+                    className={`mt-8 flex w-full cursor-pointer items-center justify-center rounded-xl py-3 text-sm font-semibold shadow-sm transition-all duration-200 ${plan.buttonStyle === "dark"
                         ? "bg-[#0b1e33] text-white hover:bg-[#071524]"
                         : "bg-[#00a896] text-white shadow-md shadow-[#00a896]/20 hover:bg-[#009686]"
-                    }`}
+                      }`}
                   >
                     Get Started
                   </Link>

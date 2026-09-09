@@ -28,7 +28,7 @@ export default function FinalCTA() {
         {/* CTA buttons */}
         <div className="mt-8 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
           <Link
-            href="/get-started" className="w-full cursor-pointer rounded-xl bg-[#00b49c] px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-[#00b49c]/25 transition-all duration-200 hover:brightness-110 hover:scale-[1.02] active:scale-[0.98] sm:w-auto">
+            href="https://first-mate-beta.vercel.app/signup" className="w-full cursor-pointer rounded-xl bg-[#00b49c] px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-[#00b49c]/25 transition-all duration-200 hover:brightness-110 hover:scale-[1.02] active:scale-[0.98] sm:w-auto">
             Get Started
           </Link>
           <Link
