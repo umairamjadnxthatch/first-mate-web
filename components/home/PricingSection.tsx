@@ -85,11 +85,10 @@ export default function PricingSection() {
             return (
               <div
                 key={plan.name}
-                className={`relative flex flex-col ${
-                  isThird
+                className={`relative flex flex-col ${isThird
                     ? "sm:col-span-2 sm:max-w-md sm:mx-auto sm:w-full lg:col-span-1 lg:max-w-none"
                     : "w-full max-w-md mx-auto sm:max-w-none"
-                }`}
+                  }`}
               >
                 {/* Badge */}
                 {plan.badge && (
@@ -99,11 +98,10 @@ export default function PricingSection() {
                 )}
 
                 <div
-                  className={`group flex h-full flex-col justify-between rounded-3xl p-6 sm:p-7 text-white shadow-lg backdrop-blur-md transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#00a896]/25 ${
-                    isFeatured
+                  className={`group flex h-full flex-col justify-between rounded-3xl p-6 sm:p-7 text-white shadow-lg backdrop-blur-md transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#00a896]/25 ${isFeatured
                       ? "border-2 border-[#00a896] bg-[#073b5c]/80 shadow-[#00a896]/20"
                       : "border border-[#0284c7]/30 bg-[#06334f]/50 hover:border-[#38bdf8]/60 hover:bg-[#073b5c]/70"
-                  }`}
+                    }`}
                 >
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wider text-slate-300">
@@ -133,12 +131,11 @@ export default function PricingSection() {
                   </div>
 
                   <Link
-                    href="/get-started"
-                    className={`mt-8 flex w-full cursor-pointer items-center justify-center rounded-xl py-3 text-sm font-semibold transition-all duration-200 ${
-                      plan.buttonStyle === "teal"
+                    href="https://first-mate-beta.vercel.app/signup"
+                    className={`mt-8 flex w-full cursor-pointer items-center justify-center rounded-xl py-3 text-sm font-semibold transition-all duration-200 ${plan.buttonStyle === "teal"
                         ? "bg-[#00a896] text-white shadow-md shadow-[#00a896]/30 hover:bg-[#02b8a2] hover:brightness-110"
                         : "border border-[#00a896]/60 bg-[#00a896]/15 text-white hover:bg-[#00a896] hover:shadow-md hover:shadow-[#00a896]/30"
-                    }`}
+                      }`}
                   >
                     Get Started
                   </Link>
