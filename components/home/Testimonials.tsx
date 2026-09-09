@@ -1,4 +1,7 @@
-import { Star } from "lucide-react";
+"use client";
+
+import { useRef } from "react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
   {
@@ -85,15 +88,24 @@ function TestimonialCard({
   quote: string;
 }) {
   return (
-    <div className="mx-3.5 w-[310px] shrink-0 rounded-3xl border border-[#0284c7]/30 bg-[#06334f]/50 p-6 text-left shadow-lg backdrop-blur-md transition-all duration-300 hover:border-[#38bdf8]/60 hover:bg-[#073b5c]/60 sm:w-[340px] sm:p-7">
-      <div className="flex gap-1 text-[#f59e0b]">
-        {Array.from({ length: 5 }).map((_, i) => (
-          <Star key={i} className="h-4 w-4 fill-[#f59e0b] text-[#f59e0b]" />
-        ))}
+    <div
+      className="
+        flex h-[320px] w-full flex-col justify-between
+        rounded-3xl border border-[#0284c7]/30 bg-[#06334f]/50 p-6 text-left
+        shadow-lg backdrop-blur-md transition-all duration-300
+        hover:border-[#38bdf8]/60 hover:bg-[#073b5c]/60 sm:p-7
+      "
+    >
+      <div>
+        <div className="flex gap-1 text-[#f59e0b]">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <Star key={i} className="h-4 w-4 fill-[#f59e0b] text-[#f59e0b]" />
+          ))}
+        </div>
+        <p className="mt-4 line-clamp-4 text-sm leading-relaxed text-slate-100 sm:text-base">
+          &ldquo;{quote}&rdquo;
+        </p>
       </div>
-      <p className="mt-4 text-sm leading-relaxed text-slate-100 sm:text-base">
-        &ldquo;{quote}&rdquo;
-      </p>
       <div className="mt-6 flex items-center gap-3">
         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-sm font-bold text-[#07557c] shadow-sm">
           {name.charAt(0)}
@@ -108,6 +120,20 @@ function TestimonialCard({
 }
 
 export default function Testimonials() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    const container = scrollRef.current;
+    if (!container) return;
+    const cardWidth = container.firstElementChild
+      ? (container.firstElementChild as HTMLElement).offsetWidth
+      : 340;
+    container.scrollBy({
+      left: direction === "left" ? -cardWidth : cardWidth,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[#062c43] via-[#05324e] to-[#062c43] py-20 text-white sm:py-28">
       {/* Subtle ambient lighting */}
@@ -128,24 +154,61 @@ export default function Testimonials() {
       </div>
 
       {/* Horizontal scrollable testimonials */}
-      <div className="relative mt-14 sm:mt-16">
+      <div className="relative mx-auto mt-14 max-w-[1600px] px-12 sm:mt-16 sm:px-16 lg:px-20">
+        {/* Left chevron — on the left of the screen/container */}
+        <button
+          type="button"
+          onClick={() => scroll("left")}
+          aria-label="Previous testimonials"
+          className="
+            absolute left-2 top-1/2 z-20 -translate-y-1/2
+            flex h-11 w-11 items-center justify-center rounded-full
+            border border-[#38bdf8]/40 bg-[#083344]/90 text-[#38bdf8]
+            shadow-xl backdrop-blur-md transition-all duration-200
+            hover:border-[#38bdf8] hover:bg-[#0b4a6b] hover:scale-110
+            active:scale-95 sm:left-4 lg:left-6
+          "
+        >
+          <ChevronLeft className="h-6 w-6" />
+        </button>
+
+        {/* Right chevron — on the right of the screen/container */}
+        <button
+          type="button"
+          onClick={() => scroll("right")}
+          aria-label="Next testimonials"
+          className="
+            absolute right-2 top-1/2 z-20 -translate-y-1/2
+            flex h-11 w-11 items-center justify-center rounded-full
+            border border-[#38bdf8]/40 bg-[#083344]/90 text-[#38bdf8]
+            shadow-xl backdrop-blur-md transition-all duration-200
+            hover:border-[#38bdf8] hover:bg-[#0b4a6b] hover:scale-110
+            active:scale-95 sm:right-4 lg:right-6
+          "
+        >
+          <ChevronRight className="h-6 w-6" />
+        </button>
+
         <div
+          ref={scrollRef}
           className="
             flex
-            gap-0
+            w-full
             overflow-x-auto
-            px-6
-            pb-6
             scroll-smooth
             snap-x
             snap-mandatory
+            pb-4
             [scrollbar-width:none]
             [-ms-overflow-style:none]
             [&::-webkit-scrollbar]:hidden
           "
         >
           {testimonials.map((testimonial, i) => (
-            <div key={i} className="snap-start">
+            <div
+              key={i}
+              className="w-full shrink-0 snap-center px-3 sm:w-1/2 sm:snap-start md:w-1/3 lg:w-1/4"
+            >
               <TestimonialCard {...testimonial} />
             </div>
           ))}
